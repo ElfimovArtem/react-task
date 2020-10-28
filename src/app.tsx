@@ -1,7 +1,9 @@
-import React from 'react';
+import * as React from 'react';
+// @ts-ignore
+import { Footer } from './components/footer';
 
-export const App = () => (
-  <div>
-    12345
-  </div>
+export const App: React.FC = () => (
+  <Footer
+    description='Some description'
+  />
 );
