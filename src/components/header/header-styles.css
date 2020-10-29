@@ -1,0 +1,31 @@
+.header {
+    position: relative;
+    background: url("../../assets/header-bg.jpg");
+    background-size: cover;
+    user-select: none;
+}
+
+.header-substrate {
+    height: 250px;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    background: #000000;
+    opacity: 0.5;
+}
+
+.header-content {
+    width: 70%;
+    min-height: 250px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    color: #ffffff;
+}
+
+.header-content__title {
+    color: #e55a68;
+    font-size: 25px;
+    margin: 0;
+    padding: 15px 0 30px 0;
+}

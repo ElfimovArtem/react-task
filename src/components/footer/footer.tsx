@@ -6,9 +6,9 @@ interface FooterPropTypes {
 }
 
 export const Footer = (props: FooterPropTypes) => (
-  <section className='footer'>
-    <p className="footer__description">
+  <footer className='footer'>
+    <span className="footer__description">
       {props.description}
-    </p>
-  </section>
+    </span>
+  </footer>
 );

@@ -1,0 +1,1 @@
+export { MovieContainer } from './movie-container';

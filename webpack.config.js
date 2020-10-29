@@ -6,8 +6,12 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: './index.tsx',
   output: {
-    filename: '[name].[contentHash].bundle.js',
     path: path.resolve(__dirname, 'public')
+  },
+  watch: true,
+  watchOptions: {
+    aggregateTimeout: 200,
+    ignored: /node_modules/
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx']
@@ -18,6 +22,12 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         use: {
           loader: 'ts-loader'
+        },
+        exclude: /node_modules/,
+      },{
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'file-loader'
         },
         exclude: /node_modules/,
       },
@@ -36,6 +46,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns : ['! index.html']
+    })
   ]
 };

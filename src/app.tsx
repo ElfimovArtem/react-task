@@ -1,9 +1,7 @@
 import * as React from 'react';
-// @ts-ignore
-import { Footer } from './components/footer';
+import { MainPage } from './pages/main-page';
+import './app-styles.css';
 
 export const App: React.FC = () => (
-  <Footer
-    description='Some description'
-  />
+  <MainPage />
 );
