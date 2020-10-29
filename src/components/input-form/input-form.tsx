@@ -6,11 +6,26 @@ import {
   Field
 } from 'formik';
 import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { Button } from '../button';
 import { headerConst } from '../../constants';
+import {
+  selectFilterTitle,
+  selectFilterDirector
+} from '../../redux/search-filter-actions';
 import './input-form-styles.css';
-import {Button} from '../button';
 
 export const InputForm = () => {
+  const dispatch = useDispatch();
+
+  const filterBtnHandler = (ev) => {
+    if(ev.target.id === 'title') {
+      dispatch(selectFilterTitle(ev.target.id));
+    } else {
+      dispatch(selectFilterDirector(ev.target.id))
+    }
+  }
+
   return (
     <Formik
       initialValues={
@@ -26,7 +41,12 @@ export const InputForm = () => {
             .required('This is a required field...')
         })
       }
-      onSubmit={(values) => console.log(values.text)}
+      onSubmit={
+        (values, { setFieldValue }) => {
+          console.log(values.text);
+          setFieldValue('text', ''); //Очистит поле после отправки
+        }
+      }
     >
       <Form className='input-form'>
         <label className='input-form__label' htmlFor='text'>{headerConst.formLabel}</label>
@@ -51,10 +71,14 @@ export const InputForm = () => {
             <Button
               type='button'
               className='filter-container__btn'
+              id='title'
+              onClick={(ev) => filterBtnHandler(ev)}
             >{headerConst.titleBtnLabel}</Button>
             <Button
               type='button'
               className='filter-container__btn'
+              id='director'
+              onClick={(ev) => filterBtnHandler(ev)}
             >{headerConst.directorBtnLabel}</Button>
           </div>
           <div className='btn-bar__submit-container'>

@@ -96,9 +96,13 @@
 
 .filter-container__btn:hover {
     cursor: pointer;
-    background: #535252;
+    filter: brightness(1.2);
 }
 
 .filter-container__btn:active {
     transform: scale(0.99, 0.98);
+}
+
+.active {
+    background: #e55a68;
 }

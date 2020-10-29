@@ -4,10 +4,17 @@ interface ButtonPropTypes {
   children: string;
   className: string;
   type: any;
+  onClick?: any;
+  id?: string;
 }
 
-export const Button = ({ children, className, type }: ButtonPropTypes) => (
-  <button className={className} type={type}>
-    {children}
+export const Button = ({ ...rest }: ButtonPropTypes) => (
+  <button
+    className={rest.className}
+    type={rest.type}
+    onClick={rest.onClick}
+    id={rest.id}
+  >
+    {rest.children}
   </button>
 );
