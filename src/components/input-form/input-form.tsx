@@ -7,6 +7,7 @@ import {
 } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux'
 import { Button } from '../button';
 import { headerConst } from '../../constants';
 import {
@@ -17,14 +18,16 @@ import './input-form-styles.css';
 
 export const InputForm = () => {
   const dispatch = useDispatch();
+  const selectionFilter = useSelector(state => state.filter.selectedFilter);
+  // не получилось сделать тоже самое через reselect????
 
   const filterBtnHandler = (ev) => {
     if(ev.target.id === 'title') {
       dispatch(selectFilterTitle(ev.target.id));
     } else {
-      dispatch(selectFilterDirector(ev.target.id))
+      dispatch(selectFilterDirector(ev.target.id));
     }
-  }
+  };
 
   return (
     <Formik
@@ -70,13 +73,21 @@ export const InputForm = () => {
             <p className='filter-container__label'>{headerConst.filterLabel}</p>
             <Button
               type='button'
-              className='filter-container__btn'
+              className={
+                selectionFilter === 'title' ?
+                  'filter-container__btn active' :
+                  'filter-container__btn'
+              }
               id='title'
               onClick={(ev) => filterBtnHandler(ev)}
             >{headerConst.titleBtnLabel}</Button>
             <Button
               type='button'
-              className='filter-container__btn'
+              className={
+                selectionFilter === 'director' ?
+                  'filter-container__btn active' :
+                  'filter-container__btn'
+              }
               id='director'
               onClick={(ev) => filterBtnHandler(ev)}
             >{headerConst.directorBtnLabel}</Button>
