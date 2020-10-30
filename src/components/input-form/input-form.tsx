@@ -14,6 +14,7 @@ import {
   selectFilterTitle,
   selectFilterDirector
 } from '../../redux/search-filter-actions';
+import { fetchMoviesList } from '../../redux/fetch-movies-actions';
 import './input-form-styles.css';
 
 export const InputForm = () => {
@@ -46,7 +47,7 @@ export const InputForm = () => {
       }
       onSubmit={
         (values, { setFieldValue }) => {
-          console.log(values.text);
+          dispatch(fetchMoviesList(values.text));
           setFieldValue('text', ''); //Очистит поле после отправки
         }
       }

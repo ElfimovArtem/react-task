@@ -8,11 +8,11 @@ interface statePropTypes {
   [SELECTED_FILTER_STORE_KEY]: string
 }
 
-const initialState = {
+const filterInitialState = {
   [SELECTED_FILTER_STORE_KEY]: 'title'
 };
 
-export const searchFilterReducer = (state: statePropTypes = initialState, {type, payload}) => {
+export const searchFilterReducer = (state: statePropTypes = filterInitialState, {type, payload}) => {
   switch (type) {
     case SEARCH_FILTER_TITLE:
       return {
@@ -27,4 +27,4 @@ export const searchFilterReducer = (state: statePropTypes = initialState, {type,
     default:
       return state;
   }
-}
+};
