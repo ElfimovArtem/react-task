@@ -14,8 +14,9 @@
 .movie-container__content {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    height: 550px;
+    min-height: 550px;
 }
 
 .content__default-text {
