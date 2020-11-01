@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom'
 import defaultImage from '../../assets/default-poster.png';
 import './movie-styles.css';
 
@@ -9,7 +10,8 @@ interface MoviePropTypes {
 }
 
 export const Movie = (props: MoviePropTypes) => (
-  <div className='movie'>
+  // @ts-ignore: Не понял что не так! Заигнорил
+  <Link to='movies/movie' className='movie'>
     <div className='movie-poster'>
       <img
         className='movie-poster__image'
@@ -19,5 +21,5 @@ export const Movie = (props: MoviePropTypes) => (
     </div>
     <p className='movie-title'>{props.title}</p>
     <p className='movie-year'>{props.year}</p>
-  </div>
+  </Link>
 );

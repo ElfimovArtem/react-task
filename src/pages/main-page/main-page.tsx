@@ -5,11 +5,13 @@ import {
   mainTitle,
   movieContainerDefaultText
 } from '../../constants';
-import {Header} from '../../components/header';
+import { Header } from '../../components/header';
 
 export const MainPage = () => (
   <div className='main-page'>
-    <Header headerTitle={mainTitle} />
+    <Header
+      headerTitle={mainTitle}
+    />
     <MovieContainer
       defaultText={movieContainerDefaultText}
     />

@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Movie } from '../movie';
+import { MoviePropTypes } from './movies-types';
 import './movie-container-styles.css';
 
 interface MovieContainerPropTypes {
   defaultText: string;
+  moviesList?: MoviePropTypes[];
 }
 
 export const MovieContainer = (props: MovieContainerPropTypes) => {

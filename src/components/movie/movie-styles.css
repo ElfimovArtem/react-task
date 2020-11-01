@@ -1,7 +1,9 @@
 .movie {
     width: 23%;
     height: 600px;
-    margin: 35px
+    margin: 35px;
+    text-decoration: none;
+    color: #000000;
 }
 
 .movie-poster {
