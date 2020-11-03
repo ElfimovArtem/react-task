@@ -1,0 +1,1 @@
+export { selectedMovieSaga } from './saga';

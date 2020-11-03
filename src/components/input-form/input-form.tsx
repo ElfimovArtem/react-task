@@ -6,8 +6,7 @@ import {
   Field
 } from 'formik';
 import * as Yup from 'yup';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Button } from '../button';
 import { headerConst } from '../../constants';
 import {

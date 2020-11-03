@@ -3,7 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import { routerMiddleware } from 'connected-react-router'
 import { rootReducer } from './root-reducer';
 import { history } from '../history';
-import { fetchMoviesSaga } from './fetch-movies';
+import { rootSaga } from './rootSaga';
 
 const saga = createSagaMiddleware();
 const composeEnhancers = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose || compose;
@@ -18,4 +18,4 @@ export const store = createStore(
   )
 );
 
-saga.run(fetchMoviesSaga);
+saga.run(rootSaga);

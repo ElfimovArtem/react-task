@@ -1,17 +1,23 @@
 import * as React from 'react';
 import { Header } from '../../components/header';
-import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router';
 import { useSelector } from 'react-redux';
 
 export const MoviePage = () => {
-  const currentMovie = useSelector(state => state.movies.Search[0]) //Нужен выбор конкретного фильма
+  const currentMovie = useSelector(state => {
+    if (state) {
+      return state.movies.Search //Нужен выбор конкретного фильма
+    }
+  });
   console.log(currentMovie);
 
-  return (
-    currentMovie ? (
+  if (!currentMovie) {
+    return (<Redirect to='/' />);
+  } else {
+    return (
       <div>
-        <Header headerTitle={currentMovie.Title} />
+        <Header headerTitle={currentMovie[0].Title} />
       </div>
-    ) : (<Redirect to="/" />)
-  );
+    );
+  }
 }
