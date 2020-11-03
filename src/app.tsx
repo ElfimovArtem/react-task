@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './redux';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
+import { ConnectedRouter } from 'connected-react-router';
 import { MainPage } from './pages/main-page';
 import { history } from './history';
 import { MoviePage } from './pages/movie-page';
@@ -9,15 +10,17 @@ import './app-styles.css';
 
 export const App: React.FC = () => (
   <Provider store={store}>
-    <Router history={history}>
+    <ConnectedRouter history={history}>
       <Switch>
-        <Route path='/'>
-          <MainPage />
-        </Route>
-        <Route path='/movies/movie'>
-          <MoviePage />
-        </Route>
+        <Route
+          path='/movies/:movieName'
+          component={MoviePage}
+        />
+        <Route
+          path='/'
+          component={MainPage}
+        />
       </Switch>
-    </Router>
+    </ConnectedRouter>
   </Provider>
 );

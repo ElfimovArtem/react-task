@@ -8,6 +8,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public')
   },
+  devServer: {
+    contentBase: './public',
+  },
+  performance : {
+    hints : false
+  },
   watch: true,
   watchOptions: {
     aggregateTimeout: 200,
