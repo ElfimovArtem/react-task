@@ -1,6 +1,6 @@
 import {
   FETCH_MOVIES_LIST_FINISH
-} from '../constants';
+} from '../../constants';
 
 const fetchMoviesInitialState = {}
 

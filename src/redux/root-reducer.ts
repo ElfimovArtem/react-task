@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
-import { searchFilterReducer } from './search-filter-reducer';
-import { fetchMoviesReducer } from './fetch-movies-reducer';
+import { fetchMoviesReducer } from './fetch-movies';
+import { searchFilterReducer } from './search-filter';
 import {
   SEARCH_FILTER_STORE_KEY,
   MOVIES_STORE_KEY

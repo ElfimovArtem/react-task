@@ -2,7 +2,7 @@ import {
   SEARCH_FILTER_TITLE,
   SEARCH_FILTER_DIRECTOR,
   SELECTED_FILTER_STORE_KEY
-} from '../constants';
+} from '../../constants';
 
 interface statePropTypes {
   [SELECTED_FILTER_STORE_KEY]: string

@@ -3,14 +3,14 @@ import {
   fetchMoviesListStart,
   fetchMoviesListFinish,
   fetchMoviesList
-} from './fetch-movies-actions';
+} from './actions';
 import axios from 'axios';
 import {
   apiKey,
   FETCH_MOVIES_LIST
-} from '../constants';
+} from '../../constants';
 
-function* sagaWorker({ searchString }: ReturnType<typeof fetchMoviesList>) {
+function* fetchMoviesWorker({ searchString }: ReturnType<typeof fetchMoviesList>) {
   try {
     yield put(fetchMoviesListStart())
     const payload = yield call(getMoviesList, searchString)
@@ -26,6 +26,6 @@ const getMoviesList = async (searchString) => {
   return data;
 }
 
-export function* fetchMovieSaga() {
-  yield takeEvery(FETCH_MOVIES_LIST, sagaWorker)
+export function* fetchMoviesSaga() {
+  yield takeEvery(FETCH_MOVIES_LIST, fetchMoviesWorker)
 }

@@ -13,8 +13,8 @@ import { headerConst } from '../../constants';
 import {
   selectFilterTitle,
   selectFilterDirector
-} from '../../redux/search-filter-actions';
-import { fetchMoviesList } from '../../redux/fetch-movies-actions';
+} from '../../redux/search-filter/actions';
+import { fetchMoviesList } from '../../redux/fetch-movies/actions';
 import './input-form-styles.css';
 
 export const InputForm = () => {

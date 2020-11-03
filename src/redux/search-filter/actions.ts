@@ -1,7 +1,7 @@
 import {
   SEARCH_FILTER_TITLE,
   SEARCH_FILTER_DIRECTOR
-} from '../constants';
+} from '../../constants';
 
 interface selectPropTypes {
   titleFilterData: string

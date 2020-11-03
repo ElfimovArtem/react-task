@@ -2,7 +2,7 @@ import {
   FETCH_MOVIES_LIST,
   FETCH_MOVIES_LIST_START,
   FETCH_MOVIES_LIST_FINISH
-} from '../constants';
+} from '../../constants';
 
 export const fetchMoviesList = (searchString) => ({
   type: FETCH_MOVIES_LIST,

@@ -1,0 +1,1 @@
+export { searchFilterReducer } from './reducer';
