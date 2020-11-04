@@ -20,3 +20,5 @@ export const MOVIES_STORE_KEY = 'movies';
 export const apiKey = '&apikey=53404bde';
 
 export const SELECTED_MOVIE = 'SELECTED_MOVIE';
+
+export const replacer = '/movies/';

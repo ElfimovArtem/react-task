@@ -17,15 +17,15 @@ import { fetchMoviesList } from '../../redux/fetch-movies/actions';
 import './input-form-styles.css';
 
 export const InputForm = () => {
-  const dispatch = useDispatch();
+  const put = useDispatch();
   const selectionFilter = useSelector(state => state.filter.selectedFilter);
   // не получилось сделать тоже самое через reselect????
 
   const filterBtnHandler = (ev) => {
     if(ev.target.id === 'title') {
-      dispatch(selectFilterTitle(ev.target.id));
+      put(selectFilterTitle(ev.target.id));
     } else {
-      dispatch(selectFilterDirector(ev.target.id));
+      put(selectFilterDirector(ev.target.id));
     }
   };
 
@@ -46,7 +46,7 @@ export const InputForm = () => {
       }
       onSubmit={
         (values, { setFieldValue }) => {
-          dispatch(fetchMoviesList(values.text));
+          put(fetchMoviesList(values.text));
           setFieldValue('text', ''); //Очистит поле после отправки
         }
       }

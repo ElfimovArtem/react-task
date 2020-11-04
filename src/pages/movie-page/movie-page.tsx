@@ -1,22 +1,19 @@
 import * as React from 'react';
-import { Header } from '../../components/header';
-import { Redirect } from 'react-router';
 import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router';
+import { moviePageSelector } from './movie-page-selectors';
+import { Header } from '../../components/header';
 
 export const MoviePage = () => {
-  const currentMovie = useSelector(state => {
-    if (state) {
-      return state.movies.Search //Нужен выбор конкретного фильма
-    }
-  });
-  console.log(currentMovie);
+  const moviesData = useSelector(state => state);  // Можно заменить на store.getState().
+  const selectedMovie = moviePageSelector(moviesData);
 
-  if (!currentMovie) {
+  if (!selectedMovie) {
     return (<Redirect to='/' />);
   } else {
     return (
       <div>
-        <Header headerTitle={currentMovie[0].Title} />
+        <Header headerTitle={selectedMovie.Title} />
       </div>
     );
   }
