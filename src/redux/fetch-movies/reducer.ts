@@ -1,15 +1,21 @@
 import {
-  FETCH_MOVIES_LIST_FINISH
-} from '../../constants';
+  FetchMoviesActionTypes
+} from './action-types';
+import { InferValueTypes } from '../utils';
+import * as actions from './actions';
 
 const fetchMoviesInitialState = {}
+type FetchMoviesActionsTypes = ReturnType<InferValueTypes<typeof actions>>;
 
-export const fetchMoviesReducer = (state: any = fetchMoviesInitialState, { type, payload }) => {
-  switch (type) {
-    case FETCH_MOVIES_LIST_FINISH:
+export const fetchMoviesReducer = (
+  state: {} = fetchMoviesInitialState,
+  action: FetchMoviesActionsTypes
+) => {
+  switch (action.type) {
+    case FetchMoviesActionTypes.FETCH_MOVIES_LIST_FINISH:
       return {
         ...state,
-        ...payload
+        ...action.moviesList
       };
     default:
       return state;

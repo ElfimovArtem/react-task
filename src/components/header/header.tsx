@@ -3,7 +3,7 @@ import { InputForm } from '../input-form';
 import { MovieDescription } from '../movie-description';
 import './header-styles.css';
 
-interface HeaderPropTypes {
+type HeaderPropTypes = {
   headerTitle: string;
   fullSize?: boolean;
   title?: string;

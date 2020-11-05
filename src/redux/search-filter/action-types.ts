@@ -1,0 +1,4 @@
+export const SelectedFilterActionTypes = {
+  SEARCH_FILTER_TITLE: 'SEARCH_FILTER_TITLE',
+  SEARCH_FILTER_DIRECTOR: 'SEARCH_FILTER_DIRECTOR'
+} as const;

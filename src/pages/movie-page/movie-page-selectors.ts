@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
-import { replacer } from '../../constants';
 import { kebabCase } from 'lodash';
+import { replacer } from '../../components/movie-description/constants';
 
 const selectMovieTitleSelector = state => state.router.location.pathname;
 const currentMovieInArrSelector = state => state.movies.Search;

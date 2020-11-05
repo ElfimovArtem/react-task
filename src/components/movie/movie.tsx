@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import defaultImage from '../../assets/default-poster.png';
 import './movie-styles.css';
 
-interface MoviePropTypes {
+type MoviePropTypes = {
   title: string;
   poster?: string;
   year: string;

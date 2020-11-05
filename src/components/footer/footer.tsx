@@ -1,14 +1,14 @@
 import * as React from 'react';
 import './footer-styles.css';
 
-interface FooterPropTypes {
+type FooterPropTypes = {
   description: string;
 }
 
-export const Footer = (props: FooterPropTypes) => (
+export const Footer: React.FC<FooterPropTypes> = ({ description }) => (
   <footer className='footer'>
     <span className="footer__description">
-      {props.description}
+      {description}
     </span>
   </footer>
 );

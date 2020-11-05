@@ -1,24 +1,22 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Movie } from '../movie';
-import { MoviePropTypes } from './movies-types';
 import './movie-container-styles.css';
 
-interface MovieContainerPropTypes {
+type MovieContainerPropTypes = {
   defaultText: string;
-  moviesList?: MoviePropTypes[];
 }
 
-export const MovieContainer = (props: MovieContainerPropTypes) => {
-  const moviesList = useSelector(state => state.movies.Search)
+export const MovieContainer: React.FC<MovieContainerPropTypes> = ({ defaultText }) => {
+  const moviesArray = useSelector(state => state.movies.Search)
 
   return (
     <div className='movie-container'>
       <div className='movie-container__bar'/>
       <div className='movie-container__content'>
         {
-          Array.isArray(moviesList) ?
-            moviesList.map(
+          Array.isArray(moviesArray) ?
+            moviesArray.map(
               movie => (
                 <Movie
                   title={movie.Title}
@@ -29,7 +27,7 @@ export const MovieContainer = (props: MovieContainerPropTypes) => {
               )
             ) : (
               <p className='content__default-text'>
-                {props.defaultText}
+                {defaultText}
               </p>
             )
         }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface ButtonPropTypes {
+type ButtonPropTypes = {
   children: string;
   className: string;
   type: any;
@@ -8,13 +8,18 @@ interface ButtonPropTypes {
   id?: string;
 }
 
-export const Button = ({ ...rest }: ButtonPropTypes) => (
+export const Button:React.FC<ButtonPropTypes> = ({
+                                                   className,
+                                                   type,
+                                                   onClick,
+                                                   id ,
+                                                   children}) => (
   <button
-    className={rest.className}
-    type={rest.type}
-    onClick={rest.onClick}
-    id={rest.id}
+    className={className}
+    type={type}
+    onClick={onClick}
+    id={id}
   >
-    {rest.children}
+    {children}
   </button>
 );

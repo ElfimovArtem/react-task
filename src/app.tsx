@@ -8,7 +8,7 @@ import { history } from './history';
 import { MoviePage } from './pages/movie-page';
 import './app-styles.css';
 
-export const App: React.FC = () => (
+export const App = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>

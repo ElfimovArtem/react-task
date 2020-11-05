@@ -1,25 +1,28 @@
-import {
-  SEARCH_FILTER_TITLE,
-  SEARCH_FILTER_DIRECTOR,
-  SELECTED_FILTER_STORE_KEY
-} from '../../constants';
+import { SELECTED_FILTER_STORE_KEY } from '../../constants';
+import { InferValueTypes } from '../utils';
+import * as actions from './actions';
+import { SelectedFilterActionTypes } from './action-types';
 
-interface statePropTypes {
+type SelectedFilterActionsTypes = ReturnType<InferValueTypes<typeof actions>>;
+type statePropTypes = {
   [SELECTED_FILTER_STORE_KEY]: string
 }
 
-const filterInitialState = {
+const filterInitialState: statePropTypes = {
   [SELECTED_FILTER_STORE_KEY]: 'title'
 };
 
-export const searchFilterReducer = (state: statePropTypes = filterInitialState, {type, payload}) => {
+export const searchFilterReducer = (
+  state = filterInitialState,
+  {type, payload}: SelectedFilterActionsTypes
+): statePropTypes => {
   switch (type) {
-    case SEARCH_FILTER_TITLE:
+    case SelectedFilterActionTypes.SEARCH_FILTER_TITLE:
       return {
         ...state,
         [SELECTED_FILTER_STORE_KEY]: payload
       };
-    case SEARCH_FILTER_DIRECTOR:
+    case SelectedFilterActionTypes.SEARCH_FILTER_DIRECTOR:
       return {
         ...state,
         [SELECTED_FILTER_STORE_KEY]: payload

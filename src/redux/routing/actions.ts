@@ -1,6 +1,6 @@
-import { SELECTED_MOVIE } from '../../constants';
+import { SelectedMovieActionTypes } from './action-types';
 
-export const selectedMovie = (movieTitle) => ({
-  type: SELECTED_MOVIE,
-  movieTitle
+export const selectedMovie = (selectedMovieTitle: string) => ({
+  type: SelectedMovieActionTypes.SELECTED_MOVIE,
+  selectedMovieTitle
 });

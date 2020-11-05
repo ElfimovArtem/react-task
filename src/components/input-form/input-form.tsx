@@ -8,7 +8,7 @@ import {
 import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux'
 import { Button } from '../button';
-import { headerConst } from '../../constants';
+import { headerConst } from '../header/constants';
 import {
   selectFilterTitle,
   selectFilterDirector
@@ -19,7 +19,6 @@ import './input-form-styles.css';
 export const InputForm = () => {
   const put = useDispatch();
   const selectionFilter = useSelector(state => state.filter.selectedFilter);
-  // не получилось сделать тоже самое через reselect????
 
   const filterBtnHandler = (ev) => {
     if(ev.target.id === 'title') {

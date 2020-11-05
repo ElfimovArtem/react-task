@@ -6,15 +6,15 @@ import {
 } from './actions';
 import axios from 'axios';
 import {
-  apiKey,
-  FETCH_MOVIES_LIST
+  apiKey
 } from '../../constants';
+import { FetchMoviesActionTypes } from './action-types';
 
 function* fetchMoviesWorker({ searchString }: ReturnType<typeof fetchMoviesList>) {
   try {
     yield put(fetchMoviesListStart())
-    const payload = yield call(getMoviesList, searchString)
-    yield put(fetchMoviesListFinish(payload));
+    const response = yield call(getMoviesList, searchString)
+    yield put(fetchMoviesListFinish(response));
   } catch (er) {
     console.error(er);
   }
@@ -27,5 +27,5 @@ const getMoviesList = async (searchString) => {
 }
 
 export function* fetchMoviesSaga() {
-  yield takeEvery(FETCH_MOVIES_LIST, fetchMoviesWorker)
+  yield takeEvery(FetchMoviesActionTypes.FETCH_MOVIES_LIST, fetchMoviesWorker)
 }

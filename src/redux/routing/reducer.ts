@@ -1,13 +1,19 @@
-import { SELECTED_MOVIE } from '../../constants';
+import { InferValueTypes } from '../utils';
+import { SelectedMovieActionTypes } from './action-types';
+import * as actions from './actions';
 
-const selectedMovieInitialState = {};
+const selectedMovieInitialState: {} = {};
+type SelectedMovieActionsTypes = ReturnType<InferValueTypes<typeof actions>>;
 
-export const selectedMovieReducer = (state: any = selectedMovieInitialState, { type, payload }) => {
+export const selectedMovieReducer = (
+  state: {} = selectedMovieInitialState,
+  {type, selectedMovieTitle}: SelectedMovieActionsTypes
+) => {
   switch (type) {
-    case SELECTED_MOVIE:
+    case SelectedMovieActionTypes.SELECTED_MOVIE:
       return {
         ...state,
-        payload
+        selectedMovieTitle
       };
     default:
       return state;

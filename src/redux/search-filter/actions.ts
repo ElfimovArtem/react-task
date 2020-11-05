@@ -1,18 +1,13 @@
 import {
-  SEARCH_FILTER_TITLE,
-  SEARCH_FILTER_DIRECTOR
-} from '../../constants';
+  SelectedFilterActionTypes
+} from './action-types';
 
-interface selectPropTypes {
-  titleFilterData: string
-}
-
-export const selectFilterTitle = (titleFilterData: selectPropTypes) => ({
-  type: SEARCH_FILTER_TITLE,
+export const selectFilterTitle = (titleFilterData: string) => ({
+  type: SelectedFilterActionTypes.SEARCH_FILTER_TITLE,
   payload: titleFilterData
 });
 
-export const selectFilterDirector = (directorFilterData: selectPropTypes) => ({
-  type: SEARCH_FILTER_DIRECTOR,
+export const selectFilterDirector = (directorFilterData: string) => ({
+  type: SelectedFilterActionTypes.SEARCH_FILTER_DIRECTOR,
   payload: directorFilterData
 });

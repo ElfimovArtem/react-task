@@ -1,12 +1,12 @@
 import React from 'react';
 import { selectedMovie } from '../../redux/routing/actions';
 import { useDispatch } from 'react-redux';
-import { someDescriptionText, releasePlaceholder, toSearch } from '../../constants';
+import { someDescriptionText, releasePlaceholder, toSearch } from './constants';
 import { Button } from '../button';
 import defaultImage from '../../assets/default-poster.png';
 import './movie-description-styles.css';
 
-interface MovieDescriptionPropTypes {
+type MovieDescriptionPropTypes = {
   poster: string;
   title: string;
   year: string;
