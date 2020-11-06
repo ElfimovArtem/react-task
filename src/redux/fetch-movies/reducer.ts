@@ -4,10 +4,18 @@ import {
 import { InferValueTypes } from '../utils';
 import * as actions from './actions';
 
+type SearchObjectType = {
+  Title: string,
+  Year: string,
+  imdbID: string,
+  Type: string,
+  Poster: string
+}
+
 const fetchMoviesInitialState = {
   Response: null as string,
   Error: null as string,
-  Search: null as Array<object>,
+  Search: null as Array<SearchObjectType>,
   totalResults: null as string,
 }
 
