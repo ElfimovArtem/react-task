@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
-import { moviePageSelector } from './movie-page-selectors';
-import { Header } from '../../components/header';
-import { mainTitle, movieContainerDefaultText } from '../../constants';
+import { ApplicationStateTypes } from '../../redux/root-reducer';
 import { MovieContainer } from '../../components/movie-container';
 import { Footer } from '../../components/footer';
+import { Header } from '../../components/header';
+import { mainTitle, movieContainerDefaultText } from '../../constants';
+import { moviePageSelector } from './movie-page-selectors';
 
 export const MoviePage = () => {
-  const moviesData = useSelector(state => state);  // Можно заменить на store.getState().
+  const moviesData = useSelector((state: ApplicationStateTypes) => state);  // Можно заменить на store.getState().
   const selectedMovieData = moviePageSelector(moviesData);
 
   if (!selectedMovieData) {

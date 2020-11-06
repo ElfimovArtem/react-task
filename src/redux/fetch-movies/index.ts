@@ -1,2 +1,2 @@
-export { fetchMoviesReducer } from './reducer';
+export { fetchMoviesReducer, FetchMoviesReducerTypes } from './reducer';
 export { fetchMoviesSaga } from './saga';

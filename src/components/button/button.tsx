@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 
 type ButtonPropTypes = {
   children: string;
   className: string;
-  type: any;
-  onClick?: any;
+  type: 'button' | 'submit' | 'reset';
+  onClick?: (ev?: MouseEvent<HTMLButtonElement>) => void;
   id?: string;
 }
 

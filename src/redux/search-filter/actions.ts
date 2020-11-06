@@ -4,10 +4,10 @@ import {
 
 export const selectFilterTitle = (titleFilterData: string) => ({
   type: SelectedFilterActionTypes.SEARCH_FILTER_TITLE,
-  payload: titleFilterData
+  selectedFilter: titleFilterData
 });
 
 export const selectFilterDirector = (directorFilterData: string) => ({
   type: SelectedFilterActionTypes.SEARCH_FILTER_DIRECTOR,
-  payload: directorFilterData
+  selectedFilter: directorFilterData
 });

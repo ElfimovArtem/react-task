@@ -14,20 +14,22 @@ const filterInitialState: statePropTypes = {
 
 export const searchFilterReducer = (
   state = filterInitialState,
-  {type, payload}: SelectedFilterActionsTypes
+  {type, selectedFilter}: SelectedFilterActionsTypes
 ): statePropTypes => {
   switch (type) {
     case SelectedFilterActionTypes.SEARCH_FILTER_TITLE:
       return {
         ...state,
-        [SELECTED_FILTER_STORE_KEY]: payload
+        [SELECTED_FILTER_STORE_KEY]: selectedFilter
       };
     case SelectedFilterActionTypes.SEARCH_FILTER_DIRECTOR:
       return {
         ...state,
-        [SELECTED_FILTER_STORE_KEY]: payload
+        [SELECTED_FILTER_STORE_KEY]: selectedFilter
       };
     default:
       return state;
   }
 };
+
+export type SearchFilterReducerTypes = ReturnType<typeof searchFilterReducer>;

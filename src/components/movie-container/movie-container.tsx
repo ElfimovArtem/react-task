@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Movie } from '../movie';
+import { ApplicationStateTypes } from '../../redux/root-reducer';
 import './movie-container-styles.css';
 
 type MovieContainerPropTypes = {
@@ -8,7 +9,7 @@ type MovieContainerPropTypes = {
 }
 
 export const MovieContainer: React.FC<MovieContainerPropTypes> = ({ defaultText }) => {
-  const moviesArray = useSelector(state => state.movies.Search)
+  const moviesArray = useSelector((state: ApplicationStateTypes) => state.movies.Search)
 
   return (
     <div className='movie-container'>

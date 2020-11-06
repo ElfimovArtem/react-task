@@ -1,1 +1,1 @@
-export { searchFilterReducer } from './reducer';
+export { searchFilterReducer, SearchFilterReducerTypes } from './reducer';

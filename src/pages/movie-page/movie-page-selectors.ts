@@ -1,9 +1,10 @@
 import { createSelector } from 'reselect';
 import { kebabCase } from 'lodash';
+import { ApplicationStateTypes } from '../../redux/root-reducer';
 import { replacer } from '../../components/movie-description/constants';
 
-const selectMovieTitleSelector = state => state.router.location.pathname;
-const currentMovieInArrSelector = state => state.movies.Search;
+const selectMovieTitleSelector = (state: ApplicationStateTypes) => state.router.location.pathname;
+const currentMovieInArrSelector = (state: ApplicationStateTypes) => state.movies.Search;
 
 const selectMovie = createSelector(
   selectMovieTitleSelector,

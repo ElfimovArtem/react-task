@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import {
   Formik,
   Form,
@@ -8,6 +8,7 @@ import {
 import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux'
 import { Button } from '../button';
+import { ApplicationStateTypes } from '../../redux/root-reducer';
 import { headerConst } from '../header/constants';
 import {
   selectFilterTitle,
@@ -18,7 +19,7 @@ import './input-form-styles.css';
 
 export const InputForm = () => {
   const put = useDispatch();
-  const selectionFilter = useSelector(state => state.filter.selectedFilter);
+  const selectionFilter = useSelector((state: ApplicationStateTypes) => state.filter.selectedFilter);
 
   const filterBtnHandler = (ev) => {
     if(ev.target.id === 'title') {
@@ -78,7 +79,7 @@ export const InputForm = () => {
                   'filter-container__btn'
               }
               id='title'
-              onClick={(ev) => filterBtnHandler(ev)}
+              onClick={(ev: MouseEvent<HTMLButtonElement>) => filterBtnHandler(ev)}
             >{headerConst.titleBtnLabel}</Button>
             <Button
               type='button'
@@ -88,7 +89,7 @@ export const InputForm = () => {
                   'filter-container__btn'
               }
               id='director'
-              onClick={(ev) => filterBtnHandler(ev)}
+              onClick={(ev: MouseEvent<HTMLButtonElement>) => filterBtnHandler(ev)}
             >{headerConst.directorBtnLabel}</Button>
           </div>
           <div className='btn-bar__submit-container'>

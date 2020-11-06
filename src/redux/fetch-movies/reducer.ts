@@ -36,3 +36,5 @@ export const fetchMoviesReducer = (
       return state;
   }
 };
+
+export type FetchMoviesReducerTypes = ReturnType<typeof fetchMoviesReducer>;
