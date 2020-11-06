@@ -4,19 +4,14 @@ import {
 import { InferValueTypes } from '../utils';
 import * as actions from './actions';
 
-type FetchMoviesInitialStateTypes = {
-  Response: string | null,
-  Error: string | null,
-  Search: Array<object> | null,
-  totalResults: string | null
+const fetchMoviesInitialState = {
+  Response: null as string,
+  Error: null as string,
+  Search: null as Array<object>,
+  totalResults: null as string,
 }
 
-const fetchMoviesInitialState: FetchMoviesInitialStateTypes = {
-  Response: null,
-  Error: null,
-  Search: null,
-  totalResults: null
-}
+type FetchMoviesInitialStateTypes = typeof fetchMoviesInitialState;
 type FetchMoviesActionsTypes = ReturnType<InferValueTypes<typeof actions>>;
 
 export const fetchMoviesReducer = (
