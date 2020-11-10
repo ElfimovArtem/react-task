@@ -20,8 +20,9 @@ function* fetchMoviesWorker({ searchString }: ReturnType<typeof fetchMoviesList>
   }
 }
 
-const getMoviesList = async (searchString: string) => {
-  const response = await axios.get(`http://www.omdbapi.com/?s=${searchString}${apiKey}`);
+const getMoviesList = async (searchString) => {
+  // const response = await axios.get(`http://www.omdbapi.com/?s=${searchString}${apiKey}`);
+  const response = await axios.get(`http://localhost:3000/static/${searchString}-response.json`);
   const { data } = response;
   return data;
 }
