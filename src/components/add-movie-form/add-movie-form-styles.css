@@ -1,0 +1,82 @@
+.add-movie-form {
+    width: 50%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 25px;
+    align-items: center;
+    position: relative;
+}
+
+.add-movie-form input {
+    width: 500px;
+    height: 35px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    font-size: 16px;
+}
+
+.add-movie-form__label {
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.add-movie-form__add-btn {
+    width: 190px;
+    height: 40px;
+    border-radius: 10px;
+    background: #e55a68;
+    color: #ffffff;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    transition: 0.2s;
+    font-size: 18px;
+}
+
+.add-movie-form__add-btn:hover {
+    cursor: pointer;
+    background: #e04050;
+}
+
+.add-movie-form__add-btn:active {
+    transform: scale(0.99, 0.98);
+}
+
+.error-title-validation {
+    position: absolute;
+    top: 65px;
+    right: -40px;
+    color: #e04050;
+}
+
+.error-type-validation {
+    position: absolute;
+    top: 125px;
+    right: -40px;
+    color: #e04050;
+}
+
+.error-poster-validation {
+    position: absolute;
+    top: 185px;
+    right: -40px;
+    color: #e04050;
+}
+
+.error-year-validation {
+    position: absolute;
+    top: 244px;
+    right: -40px;
+    color: #e04050;
+}
+
+.error-imdbID-validation {
+    position: absolute;
+    bottom: 177px;
+    right: -40px;
+    color: #e04050;
+}
+
