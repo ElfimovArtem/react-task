@@ -6,6 +6,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { MainPage } from './pages/main-page';
 import { history } from './history';
 import { MoviePage } from './pages/movie-page';
+import { AddMoviePage } from './pages/add-movie-page';
 import './app-styles.css';
 
 export const App = () => (
@@ -15,6 +16,10 @@ export const App = () => (
         <Route
           path='/movies/:movieName'
           component={MoviePage}
+        />
+        <Route
+          path='/add-movie'
+          component={AddMoviePage}
         />
         <Route
           path='/'
