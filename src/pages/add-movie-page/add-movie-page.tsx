@@ -1,25 +1,15 @@
 import React from 'react';
 import { Footer } from '../../components/footer';
 import { mainTitle } from '../../constants';
-import { Button } from '../../components/button';
-import { homeBtnClick } from '../../redux/adding-movie/actions';
-import { useDispatch } from 'react-redux';
+import { AddMovieHeader } from '../../components/add-movie-header';
+import { AddMovieForm } from '../../components/add-movie-form';
 
-export const AddMoviePage = () => {
-
-  const put = useDispatch();
-
-  return (
-    <div className='add-movie-page'>
-      <div>Здесь будет форма</div>
-      <Button
-        className='home-btn'
-        type='button'
-        onClick={() => put(homeBtnClick())}
-      >Home</Button>
-      <Footer
-        description={mainTitle}
-      />
-    </div>
-  )
-};
+export const AddMoviePage = () => (
+  <div className='add-movie-page'>
+    <AddMovieHeader />
+    <AddMovieForm />
+    <Footer
+      description={mainTitle}
+    />
+  </div>
+  );
