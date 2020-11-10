@@ -48,35 +48,35 @@
 .error-title-validation {
     position: absolute;
     top: 65px;
-    right: -40px;
+    right: 30px;
     color: #e04050;
 }
 
 .error-type-validation {
     position: absolute;
     top: 125px;
-    right: -40px;
+    right: 30px;
     color: #e04050;
 }
 
 .error-poster-validation {
     position: absolute;
     top: 185px;
-    right: -40px;
+    right: 30px;
     color: #e04050;
 }
 
 .error-year-validation {
     position: absolute;
     top: 244px;
-    right: -40px;
+    right: 30px;
     color: #e04050;
 }
 
 .error-imdbID-validation {
     position: absolute;
     bottom: 177px;
-    right: -40px;
+    right: 30px;
     color: #e04050;
 }
 
